@@ -19,31 +19,17 @@ def reader(filename):
         return(None)
 
 james_t = reader('james.txt')
+julie_t = reader('julie.txt')
+mikey_t = reader('mikey.txt')
+sarah_t = reader('sarah.txt')
 
+james = set(sorted([sanitize(each_item) for each_item in james_t]))
+julie = set(sorted([sanitize(each_item) for each_item in julie_t]))
+mikey = set(sorted([sanitize(each_item) for each_item in mikey_t]))
+sarah = set(sorted([sanitize(each_item) for each_item in sarah_t]))
 
-    
-james = sorted([sanitize(each_item) for each_item in james_t])
-julie = sorted([sanitize(each_item) for each_item in julie_t])
-mikey = sorted([sanitize(each_item) for each_item in mikey_t])
-sarah = sorted([sanitize(each_item) for each_item in sarah_t])
+print sorted(james)[0:3]
+print sorted(julie)[0:3]
+print sorted(mikey)[0:3]
+print sorted(sarah)[0:3]
 
-unique_james = set(james)
-unique_julie = set(julie)
-unique_mikey = set(mikey)
-unique_sarah = set(sarah)
-
-
-for item in julie:
-    if item not in unique_julie:
-        unique_julie.append(item)
-
-for item in mikey:
-    if item not in unique_mikey:
-        unique_mikey.append(item)
-
-for item in sarah:
-    if item not in unique_sarah:
-        unique_sarah.append(item)
-
-print james
-print sorted(unique_james)[0:3]
